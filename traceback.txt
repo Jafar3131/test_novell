@@ -1,0 +1,46 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 42, in script
+    "check how work play music channel" # play music replace previous(prior) soundtrack to written in command (choosen)
+IOError: Couldn't find file 'audio/music/snd bg music.mp3'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 42, in script
+    "check how work play music channel" # play music replace previous(prior) soundtrack to written in command (choosen)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\display\core.py", line 3380, in interact_core
+    renpy.audio.audio.periodic()
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\audio\audio.py", line 1060, in periodic
+    six.reraise(exc[0], exc[1], exc[2])
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\audio\audio.py", line 1038, in periodic_thread_main
+    periodic_pass()
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\audio\audio.py", line 979, in periodic_pass
+    c.periodic()
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\audio\audio.py", line 457, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\audio\audio.py", line 73, in load
+    rv = renpy.loader.load(fn)
+  File "C:\LBC\renpy-7.3.2-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/music/snd bg music.mp3'.
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+test2 1.0
+Fri Jul 31 16:02:06 2020
